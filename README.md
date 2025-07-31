@@ -23,3 +23,14 @@ Repo will contain what i have in/on my home server (steps and docker-compose fil
 
 
 ## Setting up services
+Below will be the services installation procedures for the home server.
+
+
+### SMB / Samba
+Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=IuRWqzfX1ik <br/>
+On your server, install the SMB daemon with the following command: <br/>
+`sudo apt install samba` <br/>
+Once that’s completed, you need a directory to store the files you will be sharing on the network. You may choose to create a folder in the `/home/$USER/shared` (replace $USER with your username) directory using the command: <br/>
+`sudo mkdir /home/$USER/shared` <br/>
+Since this folder will likely be accessed by other utilities, like Jellyfin, it is best to give your user all permissions to avoid issues later on using the command: <br/>
+`sudo chown $USER: /home/$USER/shared` <br/>
