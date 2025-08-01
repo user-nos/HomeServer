@@ -28,9 +28,24 @@ Below will be the services installation procedures for the home server.
 
 ### SMB / Samba
 Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=IuRWqzfX1ik <br/>
-On your server, install the SMB daemon with the following command: <br/>
+- On your server, install the SMB daemon with the following command: <br/>
 `sudo apt install samba` <br/>
-Once that’s completed, you need a directory to store the files you will be sharing on the network. You may choose to create a folder in the `/home/$USER/shared` (replace $USER with your username) directory using the command: <br/>
+- Once that’s completed, you need a directory to store the files you will be sharing on the network. You may choose to create a folder in the `/home/$USER/shared` (replace $USER with your username) directory using the command: <br/>
 `sudo mkdir /home/$USER/shared` <br/>
-Since this folder will likely be accessed by other utilities, like Jellyfin, it is best to give your user all permissions to avoid issues later on using the command: <br/>
+- Since this folder will likely be accessed by other utilities, like Jellyfin, it is best to give your user all permissions to avoid issues later on using the command: <br/>
 `sudo chown $USER: /home/$USER/shared` <br/>
+- Configuring Samba:
+  - Edit it with `sudo nano /etc/samba/smb.conf` <br/>
+  - Change the line `map to guest = bad user` to `map to guest = never` <br/>
+  - Add the folder you just created to the shares by adding these lines at the end of the file: <br/>
+       `[shared]` <br/>
+       `path = /home/$USER/shared` <br/>
+       `writeable=yes` <br/>
+       `public=no` <br/>
+  - Save file by pressing Ctrl + X and then Y then Enter
+  - Run `sudo smbpasswd -a youruser` ("youruser" needs to be replaced with your username) and set a password for samba
+  - Restart Samba with : `sudo systemctl restart smbd`
+  - Next, follow the steps in this guide to setup your shared storage on Windows, Mac: https://chriskalos.notion.site/5d5ff30f9bdd4dfbb9ce68f0d914f1f6?pvs=25
+
+
+ 
