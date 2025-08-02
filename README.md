@@ -48,4 +48,7 @@ Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=IuRWq
   - Next, follow the steps in this guide to setup your shared storage on Windows, Mac: https://chriskalos.notion.site/5d5ff30f9bdd4dfbb9ce68f0d914f1f6?pvs=25
 
 
- 
+ ### Domain NAme + Nginx Proxy Manager / NPM
+ Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=qlcVx-k-02E <br/>
+ - Go to www.duckdns.org to create a completely free domain name for your homeserver
+ - Next, create the docker-compose file for the NPM container (see docker-compose file in the project)
