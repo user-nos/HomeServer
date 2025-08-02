@@ -52,3 +52,4 @@ Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=IuRWq
  Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=qlcVx-k-02E <br/>
  - Go to www.duckdns.org to create a completely free domain name for your homeserver
  - Next, create the docker-compose file for the NPM container (see docker-compose file in the project)
+ - Navigate to the folder where you create the docker-compose.yml file and run it with the command: `docker-compose up -d` 
