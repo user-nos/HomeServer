@@ -52,4 +52,11 @@ Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=IuRWq
  Following the YT tutorial mentioned above: https://www.youtube.com/watch?v=qlcVx-k-02E <br/>
  - Go to www.duckdns.org to create a completely free domain name for your homeserver
  - Next, create the docker-compose file for the NPM container (see docker-compose file in the project)
- - Navigate to the folder where you create the docker-compose.yml file and run it with the command: `docker-compose up -d` 
+   - create a docker network first as described in npm documentation so all your docker containers can be put on the same network: `docker network create npm`
+   - see docker-compose file to see how container is put on the network created
+ - Navigate to the folder where you create the docker-compose.yml file and run it with the command: `docker-compose up -d`
+ - After the NPM container is created, navigate to it by opening its web UI at your-homeserver-ip:81, get the default login credentials on NPM documentation or github
+ - Up next, follow up the YT video tutorial to create your SSL certificate and then your first proxy host which is the NPM web UI itself
+
+
+
