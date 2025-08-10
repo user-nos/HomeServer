@@ -6,10 +6,14 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Indian/Mauritius
+    group_add:
+      - '993'
     volumes:
       - /home/nos/shared/docker/jellyfin/config:/config
       - /home/nos/shared/media/shows:/data/shows
       - /home/nos/shared/media/movies:/data/movies
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
     # No need to expose ports if NPM is creating a domain name for it
     # ports:
     #   - 8096:8096
