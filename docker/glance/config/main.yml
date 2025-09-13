@@ -1,0 +1,226 @@
+- name: Main
+  # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+  # hide-desktop-navigation: true
+  center-vertically: true
+  width: wide
+
+  head-widgets:
+      - type: search
+        hide-header: true
+        search-engine: duckduckgo
+        bangs:
+          - title: YouTube
+            shortcut: "!yt"
+            url: https://www.youtube.com/results?search_query={QUERY}
+
+  columns:
+    - size: small
+      widgets:
+        - type: clock
+          hour-format: 24h
+          timezones:
+            - timezone: Europe/Paris
+              label: Paris
+            - timezone: Asia/Tokyo
+              label: Tokyo
+        - type: weather
+          location: Quatre Bornes, Mauritius
+          units: metric # alternatively "imperial"
+          hour-format: 24h # alternatively "12h"
+          # Optionally hide the location from being displayed in the widget
+          # hide-location: true
+        - type: calendar
+          first-day-of-week: monday
+        - type: to-do
+        
+    - size: full
+      widgets:
+        - type: server-stats
+          servers:
+            - type: local
+              name: Optinos
+
+        - type: bookmarks
+          groups:
+            - title: General
+              color: 10 70 50
+              links:
+                - title: Google
+                  url: https://www.google.com/
+                  icon: si:google
+                - title: Github
+                  url: https://github.com/
+                  icon: si:github
+                - title: Youtube
+                  url: https://www.youtube.com/
+                  icon: si:youtube
+                - title: ChatGPT
+                  url: https://chat.openai.com/
+                  icon: di:chatgpt
+                - title: SBM online
+                  url: https://ebmu.sbmgroup.mu
+                  icon: si:semanticui
+                - title: GSM Arena
+                  url: https://gsmarena.com
+                  icon: si:gsmarenadotcom
+                - title: Bitwarden Web Vault
+                  url: https://vault.bitwarden.com/#/login
+                  icon: si:bitwarden
+                - title: Paypal
+                  url: https://paypal.com/mu/home
+                  icon: si:paypal
+                - title: DGB.lol
+                  url: https://dgb.lol
+                  icon: si:d
+            - title: Anime
+              color: 100 35 70
+              links:
+                - title: Myanimelist.net
+                  url: https://myanimelist.net/
+                  icon: si:myanimelist
+                - title: Hianime.to
+                  url: https://hianime.to/home
+                  icon: si:hexlet
+                - title: Kayoanime.com
+                  url: https://kayoanime.com
+                  icon: si:kaniko
+            - title: Social
+              color: 200 50 50
+              links:
+                - title: Facebook
+                  url: https://www.facebook.com/
+                  icon: si:facebook
+                - title: X
+                  url: https://x.com
+                  icon: si:x
+                - title: Discord
+                  url: https://discord.com/channels/@me
+                  icon: si:discord
+            - title: Wallpapers
+              color: 25 40 55
+              links:
+                - title: Wallhaven
+                  url: https://wallhaven.cc/
+                  icon: si:wish
+                - title: Pixiv
+                  url: https://pixiv.net/en
+                  icon: si:pixiv
+                - title: Deviantart
+                  url: https://deviantart.com/
+                  icon: si:deviantart
+            - title: Online Shopping
+              color: 225 75 55
+              links:
+                - title: Aliexpress
+                  url: https://aliexpress.com/
+                  icon: si:aliexpress
+                - title: Amazon.com
+                  url: https://amazon.com/
+                  icon: di:amazon
+                - title: Amazon.fr
+                  url: https://amazon.fr/
+                  icon: di:amazon
+                - title: Amazon.co.uk
+                  url: https://amazon.co.uk/
+                  icon: di:amazon
+                - title: Reichelt.com
+                  url: https://www.reichelt.com/mu/en/
+                  icon: si:remark
+                - title: Allsport
+                  url: https://allsport.mu/
+                  icon: si:aframe
+                - title: Decathlon
+                  url: https://decathlon.mu/
+                  icon: si:dash
+                - title: 101-multimedia
+                  url: https://101-multimedia.com/
+                  icon: si:1and1
+                - title: Fastclick
+                  url: https://fastclick.mu/
+                  icon: si:fastapi
+                - title: Shenzhenaudio
+                  url: https://shenzhenaudio.com/
+                  icon: si:audacity
+                - title: Satechi
+                  url: https://satechi.net
+                  icon: si:sanic
+                - title: GMKTec
+                  url: https://www.gmktec.com/
+                  icon: si:gcore
+            - title: Mails
+              color: 190 75 55
+              links:
+                - title: Gmail
+                  url: https://mail.google.com/mail/u/0/
+                  icon: si:gmail
+                - title: Proton
+                  url: https://account.proton.me/login
+                  icon: si:protonmail
+                - title: Yahoo
+                  url: https://login.yahoo.com/manage_account?pspid=159600001&activity=mail-direct&.lang=en-US&.intl=us&src=ym
+                  icon: di:yahoo
+            - title: Torrenting
+              color: 254 35 70
+              links:
+                - title: YTS
+                  url: https://yts.mx
+                  icon: di:yts
+                - title: EXT.to
+                  url: https://ext.to/
+                  icon: si:express
+                - title: 1337x.to
+                  url: https://1337x.to
+                  icon: si:mxlinux
+                - title: Nyaa.si
+                  url: https://nyaa.si
+                  icon: si:neovim
+                - title: Bitsearch.to
+                  url: https://bitsearch.to
+                  icon: si:bit
+                - title: My-subs.co
+                  url: https://my-subs.co
+                  icon: si:surfshark
+            # - title: Home Server
+            #   color: 50 50 50
+            #   links:
+            #     - title: ${HS_QBITTORRENT_NAME}
+            #       url: ${HS_QBITTORRENT_URL}
+            #       icon: ${HS_QBITTORRENT_ICON}
+            #     - title: ${HS_FILEBROWSER_NAME}
+            #       url: ${HS_FILEBROWSER_URL}
+            #       icon: ${HS_FILEBROWSER_ICON}
+            #     - title: ${HS_JELLYFIN_NAME}
+            #       url: ${HS_JELLYFIN_URL}
+            #       icon: ${HS_JELLYFIN_ICON}
+            #     - title: ${HS_NPM_NAME}
+            #       url: ${HS_NPM_URL}
+            #       icon: ${HS_NPM_ICON}
+            #     - title: ${HS_UPTIMEKUMA_NAME}
+            #       url: ${HS_UPTIMEKUMA_URL}
+            #       icon: ${HS_UPTIMEKUMA_ICON}
+            - title: Others
+              links:
+                - title: Internet Usage
+                  url: https://internetaccount.myt.mu/#/auth/login
+                  icon: si:abdownloadmanager
+                - title: ATK Hub beta
+                  url: https://hub.atk.pro
+                  icon: si:arkecosystem
+                - title: Elekmaster Hub
+                  url: https://key.eleksmaker.com
+                  icon: si:erpnext
+            - title: Wuthering Waves
+              color: 360 75 30
+              links:
+                - title: Prydwen.gg
+                  url: https://www.prydwen.gg/wuthering-waves/
+                  icon: si:webtrees
+                - title: Wuthering.gg
+                  url: https://wuthering.gg/
+                  icon: si:webtrees
+                - title: Hakush.in
+                  url: https://ww.hakush.in/
+                  icon: si:webtrees
+                - title: WutheringLab.gg
+                  url: https://wutheringlab.com/
+                  icon: si:webtrees

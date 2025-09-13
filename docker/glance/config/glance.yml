@@ -1,0 +1,30 @@
+server:
+  assets-path: /app/assets
+
+theme:
+  # Note: assets are cached by the browser, changes to the CSS file
+  # will not be reflected until the browser cache is cleared (Ctrl+F5)
+  custom-css-file: /assets/user.css
+  background-color: 20 1 10
+  contrast-multiplier: 1.3
+  primary-color: 217 92 83
+  positive-color: 115 54 76
+  negative-color: 347 70 65
+
+  disable-picker: true
+
+pages:
+  # It's not necessary to create a new file for each page and include it, you can simply
+  # put its contents here, though multiple pages are easier to manage when separated
+  - $include: main.yml
+  - $include: homeserver.yml
+
+branding:
+  hide-footer: false
+  # custom-footer: |
+  #   <p>Powered by <a href="https://github.com/glanceapp/glance">Glance</a></p>
+  # logo-url: /assets/logo.png
+  # favicon-url: /assets/logo.png
+  # app-name: "My Dashboard"
+  # app-icon-url: "/assets/app-icon.png"
+  # app-background-color: "#151519"
