@@ -1,0 +1,27 @@
+services:
+  speedtest-tracker:
+    image: lscr.io/linuxserver/speedtest-tracker:latest
+    restart: unless-stopped
+    container_name: speedtest-tracker
+    # No need to expose ports if NPM is creating a domain name for it
+    # ports:
+    #   - 8080:80
+    #   - 8443:443
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - APP_KEY=base64:<key>    # See official docs to see how to generate this app_key to be used here
+      - DB_CONNECTION=sqlite
+      - APP_URL=https://speedtest.optinos.duckdns.org    # Necessary when using a reverse proxy like NPM
+      - ASSET_URL=https://speedtest.optinos.duckdns.org  # Necessary when using a reverse proxy like NPM
+      - SPEEDTEST_SCHEDULE="10 */4 * * *"  # Cron schedule, runs every 4 hours at 10min mark.
+      - APP_TIMEZONE=Indian/Mauritius
+      - DISPLAY_TIMEZONE=Indian/Mauritius  # Sets the timezone for displaying data in the UI.
+    volumes:
+      - ./config:/config
+      - ./ssl-keys:/config/keys
+
+networks:
+  default:
+    external: true
+    name: npm
