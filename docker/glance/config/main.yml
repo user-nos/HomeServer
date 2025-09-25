@@ -4,6 +4,7 @@
   center-vertically: true
   width: wide
 
+  # SEARCH BAR
   head-widgets:
       - type: search
         hide-header: true
@@ -13,6 +14,7 @@
             shortcut: "!yt"
             url: https://www.youtube.com/results?search_query={QUERY}
 
+  # LEFT SIDE BAR (GETS HIDDEN ON SMALLER DISPLAYS)
   columns:
     - size: small
       widgets:
@@ -33,194 +35,460 @@
           first-day-of-week: monday
         - type: to-do
         
+    # MAIN DISPLAY (ALWAYS DISPLAYED BUT GET RESIZED DEPENDING ON DISPLAY SIZE)
     - size: full
       widgets:
-        - type: server-stats
-          servers:
-            - type: local
-              name: Optinos
+        - type: group
+          widgets:
+            - type: bookmarks
+              groups:
+                - title: General
+                  color: 10 70 50
+                  links:
+                    - title: Google
+                      url: https://www.google.com/
+                      icon: si:google
+                    - title: Github
+                      url: https://github.com/
+                      icon: si:github
+                    - title: Youtube
+                      url: https://www.youtube.com/
+                      icon: si:youtube
+                    - title: ChatGPT
+                      url: https://chat.openai.com/
+                      icon: di:chatgpt
+                    - title: SBM online
+                      url: https://ebmu.sbmgroup.mu
+                      icon: si:semanticui
+                    - title: GSM Arena
+                      url: https://gsmarena.com
+                      icon: si:gsmarenadotcom
+                    - title: Bitwarden Web Vault
+                      url: https://vault.bitwarden.com/#/login
+                      icon: si:bitwarden
+                    - title: Paypal
+                      url: https://paypal.com/mu/home
+                      icon: si:paypal
+                    - title: DGB.lol
+                      url: https://dgb.lol
+                      icon: si:d
+                - title: Anime
+                  color: 100 35 70
+                  links:
+                    - title: Myanimelist.net
+                      url: https://myanimelist.net/animelist/
+                      icon: si:myanimelist
+                    - title: Hianime.to
+                      url: https://hianime.to/home
+                      icon: si:hexlet
+                    - title: Kayoanime.com
+                      url: https://kayoanime.com
+                      icon: si:kaniko
+                - title: Social
+                  color: 200 50 50
+                  links:
+                    - title: Facebook
+                      url: https://www.facebook.com/
+                      icon: si:facebook
+                    - title: X
+                      url: https://x.com
+                      icon: si:x
+                    - title: Discord
+                      url: https://discord.com/channels/@me
+                      icon: si:discord
+                - title: Wallpapers
+                  color: 25 40 55
+                  links:
+                    - title: Wallhaven
+                      url: https://wallhaven.cc/
+                      icon: si:wish
+                    - title: Pixiv
+                      url: https://pixiv.net/en
+                      icon: si:pixiv
+                    - title: Deviantart
+                      url: https://deviantart.com/
+                      icon: si:deviantart
+                - title: Online Shopping
+                  color: 225 75 55
+                  links:
+                    - title: Aliexpress
+                      url: https://aliexpress.com/
+                      icon: si:aliexpress
+                    - title: Amazon.com
+                      url: https://amazon.com/
+                      icon: di:amazon
+                    - title: Amazon.fr
+                      url: https://amazon.fr/
+                      icon: di:amazon
+                    - title: Amazon.co.uk
+                      url: https://amazon.co.uk/
+                      icon: di:amazon
+                    - title: Reichelt.com
+                      url: https://www.reichelt.com/mu/en/
+                      icon: si:remark
+                    - title: Allsport
+                      url: https://allsport.mu/
+                      icon: si:aframe
+                    - title: Decathlon
+                      url: https://decathlon.mu/
+                      icon: si:dash
+                    - title: 101-multimedia
+                      url: https://101-multimedia.com/
+                      icon: si:1and1
+                    - title: Fastclick
+                      url: https://fastclick.mu/
+                      icon: si:fastapi
+                    - title: Shenzhenaudio
+                      url: https://shenzhenaudio.com/
+                      icon: si:audacity
+                    - title: Satechi
+                      url: https://satechi.net
+                      icon: si:sanic
+                    - title: GMKTec
+                      url: https://www.gmktec.com/
+                      icon: si:gcore
+                - title: Mails
+                  color: 190 75 55
+                  links:
+                    - title: Gmail
+                      url: https://mail.google.com/mail/u/0/
+                      icon: si:gmail
+                    - title: Proton
+                      url: https://account.proton.me/login
+                      icon: si:protonmail
+                    - title: Yahoo
+                      url: https://login.yahoo.com/manage_account
+                      icon: di:yahoo
+                - title: Torrenting
+                  color: 254 35 70
+                  links:
+                    - title: YTS
+                      url: https://yts.mx
+                      icon: di:yts
+                    - title: EXT.to
+                      url: https://ext.to/
+                      icon: si:express
+                    - title: 1337x.to
+                      url: https://1337x.to
+                      icon: si:mxlinux
+                    - title: Nyaa.si
+                      url: https://nyaa.si
+                      icon: si:neovim
+                    - title: Bitsearch.to
+                      url: https://bitsearch.to
+                      icon: si:bit
+                    - title: My-subs.co
+                      url: https://my-subs.co
+                      icon: si:surfshark
+                - title: Others
+                  links:
+                    - title: Internet Usage
+                      url: https://internetaccount.myt.mu/#/auth/login
+                      icon: si:abdownloadmanager
+                    - title: ATK Hub beta
+                      url: https://hub.atk.pro
+                      icon: si:arkecosystem
+                    - title: Elekmaster Hub
+                      url: https://key.eleksmaker.com
+                      icon: si:erpnext
+                - title: Wuthering Waves
+                  color: 360 75 30
+                  links:
+                    - title: Prydwen.gg
+                      url: https://www.prydwen.gg/wuthering-waves/
+                      icon: si:webtrees
+                    - title: Wuthering.gg
+                      url: https://wuthering.gg/
+                      icon: si:webtrees
+                    - title: Hakush.in
+                      url: https://ww.hakush.in/
+                      icon: si:webtrees
+                    - title: WutheringLab.gg
+                      url: https://wutheringlab.com/
+                      icon: si:webtrees
+            #EPIC GAMES FREE GAMES
+            - type: custom-api
+              title: Epic Store Free Games
+              cache: 24h
+              url: https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions?locale=en&country=US&allowCountries=US
+              template: |
+                <div>
+                  {{ if eq .Response.StatusCode 200 }}
+                    <div class="horizontal-cards-2">
+                      {{ range .JSON.Array "data.Catalog.searchStore.elements" }}
+                        {{ $price := .String "price.totalPrice.discountPrice" }}
+                        {{ $hasPromo := gt (len (.Array "promotions.promotionalOffers")) 0 }}
+                        {{ if and $hasPromo (eq $price "0") }}
+                          {{ $gamePage := .String "productSlug" }}
+                          {{ if gt (len (.Array "offerMappings")) 0 }}
+                            {{ $gamePage = .String "offerMappings.0.pageSlug" }}
+                          {{end }}
+                          <a href="https://store.epicgames.com/en-US/p/{{ $gamePage }}" target="_blank" class="card" style="float: left; width: 25%; padding: 1%;">
+                            {{ $title := .String "title" }}
+                            {{ range .Array "keyImages" }}
+                              {{ if eq (.String "type") "OfferImageWide" }}
+                                <img src="{{ .String "url" }}" alt="{{ $title }}" style="width: 100%; max-width: 500px; object-fit: cover; border-radius: var(--border-radius);">
+                              {{ end }}
+                            {{ end }}
+                            <div class="card-content">
+                              <span class="size-base color-primary">{{ $title }}</span><br>
+                              <span class="size-h5 color-subdue">
+                                {{ if $hasPromo }}
+                                  {{ $promotions := .Array "promotions.promotionalOffers" }}
+                                  {{ if gt (len $promotions) 0 }}
+                                    {{ $firstPromo := index $promotions 0 }}
+                                    {{ $offers := $firstPromo.Array "promotionalOffers" }}
+                                    {{ if gt (len $offers) 0 }}
+                                      {{ $firstOffer := index $offers 0 }}
+                                      Free until {{ slice ($firstOffer.String "endDate") 0 10 }}
+                                    {{ else }}
+                                      Free this week!
+                                    {{ end }}
+                                  {{ else }}
+                                    Free this week!
+                                  {{ end }}
+                                {{ end }}
+                              </span>
+                            </div>
+                          </a>
+                        {{ end }}
+                      {{ end }}
+                    </div>
+                  {{ else }}
+                    <p class="color-negative">Error fetching Epic Games data.</p>
+                  {{ end }}
+                </div>
+        
+        #SERVER MONITORING
+        - type: split-column
+          widgets:
+            #GETTING BESZEL METRICS FROM RUNNING BESZEL DOCKER CONTAINER
+            - type: custom-api
+              title: Beszel Metrics
+              url: ${HS_BESZEL_URL}/api/collections/systems/records
+              method: GET
+              options:
+                redirect-url: "${HS_BESZEL_URL}" # You must use "" and http:// or https://
+                in-new-tab: true
+                hide-kernel: false
+                hide-uptime: false
+                hide-cpu-info: false
+                hide-ip: false
+                collapsible: false
+              headers:
+                Authorization: Bearer ${HS_BESZEL_TOKEN}
+                Accept: application/json
+              template: |
+                {{ $redirect := .Options.StringOr "redirect-url" "" }}
+                {{ $newTab := .Options.BoolOr "in-new-tab" false }}
+                {{ $hideKernel := .Options.BoolOr "hide-kernel" false }}
+                {{ $hideUptime := .Options.BoolOr "hide-uptime" false }}
+                {{ $hideCPUInfo := .Options.BoolOr "hide-cpu-info" false }}
+                {{ $hideIP := .Options.BoolOr "hide-ip" false }}
+                {{ $collapsible := .Options.BoolOr "collapsible" false }}
+                {{ $items := .JSON.Array "items" }}
+                {{ range $items }}
+                  <div style="padding: 1%;">
+                  {{ $info := .Get "info" }}
+                  {{ $name := .String "name" }}
+                  {{ $link := "" }}
+                  {{ if ne $redirect "" }}
+                    {{ $link = printf "%s/system/%s" $redirect $name }}
+                  {{ end }}
+                  <div style="font-size: 1.15em;">
+                    {{ if eq (.String "status") "up" }}
+                      <span class="status-dot color-positive">●</span>
+                    {{ else }}
+                      <span class="status-dot color-negative">●</span>
+                    {{ end }}
+                    {{ if ne $redirect "" }}
+                      <a class="color-highlight text-truncate" href="{{ printf "%s/system/%s" $redirect $name | safeURL }}" {{ if $newTab }}target="_blank" rel="noopener"{{ end }}>
+                        {{ $name }}{{ if not $hideIP }} ({{ .String "host" }}){{ end }}
+                      </a>
+                    {{ else }}
+                      <span class="color-highlight text-truncate">
+                        {{ $name }}{{ if not $hideIP }} ({{ .String "host" }}){{ end }}
+                      </span>
+                    {{ end }}
+                  </div>
+                  {{ if $collapsible }}
+                    <details class="margin-top-5">
+                      <summary class="size-h5 color-subtle" style="cursor: pointer;">Metrics</summary>
+                      <div class="margin-top-5">
+                        {{ if not $hideKernel }}
+                          <p style="font-size: 1em;">Kernel: {{ $info.String "k" }}</p>
+                        {{ end }}
+                        {{ if not $hideUptime }}
+                          {{ $uptimeSec := $info.Float "u" }}
+                          {{ if ge $uptimeSec 86400.0 }}
+                            <p style="font-size: 1em;">Uptime: {{ printf "%.2f" (mul $uptimeSec 0.000011574) }}d</p>
+                          {{ else }}
+                            <p style="font-size: 1em;">Uptime: {{ printf "%.2f" (mul $uptimeSec 0.000277778) }}h</p>
+                          {{ end }}
+                        {{ end }}
+                        {{ if not $hideCPUInfo }}
+                          <p style="font-size: 1em;">CPU: {{ replaceAll "CPU " "" ($info.String "m") }}</p>
+                        {{ end }}
+                        <table style="width:100%; font-size: 1em; margin-top: 0.5em;">
+                          <tr class="color-highlight">
+                            <th>CPU Usage</th>
+                            <th>Memory Usage</th>
+                            <th>Disk Usage</th>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "cpu" }}"></div>
+                              {{ $info.Float "cpu" }} %
+                            </td>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "mp" }}"></div>
+                              {{ $info.Float "mp" }} %
+                            </td>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "dp" }}"></div>
+                              {{ $info.Float "dp" }} %
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </details>
+                  {{ else }}
+                    <div class="margin-top-5">
+                      {{ if not $hideKernel }}
+                        <p style="font-size: 1em;">Kernel: {{ $info.String "k" }}</p>
+                      {{ end }}
+                      {{ if not $hideUptime }}
+                        {{ $uptimeSec := $info.Float "u" }}
+                        {{ if ge $uptimeSec 86400.0 }}
+                          <p style="font-size: 1em;">Uptime: {{ printf "%.2f" (mul $uptimeSec 0.000011574) }}d</p>
+                        {{ else }}
+                          <p style="font-size: 1em;">Uptime: {{ printf "%.2f" (mul $uptimeSec 0.000277778) }}h</p>
+                        {{ end }}
+                      {{ end }}
+                      {{ if not $hideCPUInfo }}
+                        <p style="font-size: 1em;">CPU: {{ replaceAll "CPU " "" ($info.String "m") }}</p>
+                      {{ end }}
+                      <table style="width:100%; font-size: 1em; margin-top: 0.5em;">
+                          <tr class="color-highlight">
+                            <th>CPU Usage</th>
+                            <th>Memory Usage</th>
+                            <th>Disk Usage</th>
+                          </tr>
+                          <tr>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "cpu" }}"></div>
+                              {{ $info.Float "cpu" }} %
+                            </td>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "mp" }}"></div>
+                              {{ $info.Float "mp" }} %
+                            </td>
+                            <td style="text-align: center;">
+                              <div role="customprogressbar" style="--value: {{ $info.Float "dp" }}"></div>
+                              {{ $info.Float "dp" }} %
+                            </td>
+                          </tr>
+                        </table>
+                    </div>
+                  {{ end }}
+                  </div>
+                {{ end }}
+            - type: server-stats
+              servers:
+                - type: local
+                  name: Optinos
 
-        - type: bookmarks
-          groups:
-            - title: General
-              color: 10 70 50
-              links:
-                - title: Google
-                  url: https://www.google.com/
-                  icon: si:google
-                - title: Github
-                  url: https://github.com/
-                  icon: si:github
-                - title: Youtube
-                  url: https://www.youtube.com/
-                  icon: si:youtube
-                - title: ChatGPT
-                  url: https://chat.openai.com/
-                  icon: di:chatgpt
-                - title: SBM online
-                  url: https://ebmu.sbmgroup.mu
-                  icon: si:semanticui
-                - title: GSM Arena
-                  url: https://gsmarena.com
-                  icon: si:gsmarenadotcom
-                - title: Bitwarden Web Vault
-                  url: https://vault.bitwarden.com/#/login
-                  icon: si:bitwarden
-                - title: Paypal
-                  url: https://paypal.com/mu/home
-                  icon: si:paypal
-                - title: DGB.lol
-                  url: https://dgb.lol
-                  icon: si:d
-            - title: Anime
-              color: 100 35 70
-              links:
-                - title: Myanimelist.net
-                  url: https://myanimelist.net/
-                  icon: si:myanimelist
-                - title: Hianime.to
-                  url: https://hianime.to/home
-                  icon: si:hexlet
-                - title: Kayoanime.com
-                  url: https://kayoanime.com
-                  icon: si:kaniko
-            - title: Social
-              color: 200 50 50
-              links:
-                - title: Facebook
-                  url: https://www.facebook.com/
-                  icon: si:facebook
-                - title: X
-                  url: https://x.com
-                  icon: si:x
-                - title: Discord
-                  url: https://discord.com/channels/@me
-                  icon: si:discord
-            - title: Wallpapers
-              color: 25 40 55
-              links:
-                - title: Wallhaven
-                  url: https://wallhaven.cc/
-                  icon: si:wish
-                - title: Pixiv
-                  url: https://pixiv.net/en
-                  icon: si:pixiv
-                - title: Deviantart
-                  url: https://deviantart.com/
-                  icon: si:deviantart
-            - title: Online Shopping
-              color: 225 75 55
-              links:
-                - title: Aliexpress
-                  url: https://aliexpress.com/
-                  icon: si:aliexpress
-                - title: Amazon.com
-                  url: https://amazon.com/
-                  icon: di:amazon
-                - title: Amazon.fr
-                  url: https://amazon.fr/
-                  icon: di:amazon
-                - title: Amazon.co.uk
-                  url: https://amazon.co.uk/
-                  icon: di:amazon
-                - title: Reichelt.com
-                  url: https://www.reichelt.com/mu/en/
-                  icon: si:remark
-                - title: Allsport
-                  url: https://allsport.mu/
-                  icon: si:aframe
-                - title: Decathlon
-                  url: https://decathlon.mu/
-                  icon: si:dash
-                - title: 101-multimedia
-                  url: https://101-multimedia.com/
-                  icon: si:1and1
-                - title: Fastclick
-                  url: https://fastclick.mu/
-                  icon: si:fastapi
-                - title: Shenzhenaudio
-                  url: https://shenzhenaudio.com/
-                  icon: si:audacity
-                - title: Satechi
-                  url: https://satechi.net
-                  icon: si:sanic
-                - title: GMKTec
-                  url: https://www.gmktec.com/
-                  icon: si:gcore
-            - title: Mails
-              color: 190 75 55
-              links:
-                - title: Gmail
-                  url: https://mail.google.com/mail/u/0/
-                  icon: si:gmail
-                - title: Proton
-                  url: https://account.proton.me/login
-                  icon: si:protonmail
-                - title: Yahoo
-                  url: https://login.yahoo.com/manage_account?pspid=159600001&activity=mail-direct&.lang=en-US&.intl=us&src=ym
-                  icon: di:yahoo
-            - title: Torrenting
-              color: 254 35 70
-              links:
-                - title: YTS
-                  url: https://yts.mx
-                  icon: di:yts
-                - title: EXT.to
-                  url: https://ext.to/
-                  icon: si:express
-                - title: 1337x.to
-                  url: https://1337x.to
-                  icon: si:mxlinux
-                - title: Nyaa.si
-                  url: https://nyaa.si
-                  icon: si:neovim
-                - title: Bitsearch.to
-                  url: https://bitsearch.to
-                  icon: si:bit
-                - title: My-subs.co
-                  url: https://my-subs.co
-                  icon: si:surfshark
-            # - title: Home Server
-            #   color: 50 50 50
-            #   links:
-            #     - title: ${HS_QBITTORRENT_NAME}
-            #       url: ${HS_QBITTORRENT_URL}
-            #       icon: ${HS_QBITTORRENT_ICON}
-            #     - title: ${HS_FILEBROWSER_NAME}
-            #       url: ${HS_FILEBROWSER_URL}
-            #       icon: ${HS_FILEBROWSER_ICON}
-            #     - title: ${HS_JELLYFIN_NAME}
-            #       url: ${HS_JELLYFIN_URL}
-            #       icon: ${HS_JELLYFIN_ICON}
-            #     - title: ${HS_NPM_NAME}
-            #       url: ${HS_NPM_URL}
-            #       icon: ${HS_NPM_ICON}
-            #     - title: ${HS_UPTIMEKUMA_NAME}
-            #       url: ${HS_UPTIMEKUMA_URL}
-            #       icon: ${HS_UPTIMEKUMA_ICON}
-            - title: Others
-              links:
-                - title: Internet Usage
-                  url: https://internetaccount.myt.mu/#/auth/login
-                  icon: si:abdownloadmanager
-                - title: ATK Hub beta
-                  url: https://hub.atk.pro
-                  icon: si:arkecosystem
-                - title: Elekmaster Hub
-                  url: https://key.eleksmaker.com
-                  icon: si:erpnext
-            - title: Wuthering Waves
-              color: 360 75 30
-              links:
-                - title: Prydwen.gg
-                  url: https://www.prydwen.gg/wuthering-waves/
-                  icon: si:webtrees
-                - title: Wuthering.gg
-                  url: https://wuthering.gg/
-                  icon: si:webtrees
-                - title: Hakush.in
-                  url: https://ww.hakush.in/
-                  icon: si:webtrees
-                - title: WutheringLab.gg
-                  url: https://wutheringlab.com/
-                  icon: si:webtrees
+        - type: split-column
+          widgets:
+            - type: monitor
+              cache: 1m
+              title: Services
+              sites:
+                - title: ${HS_JELLYFIN_NAME}
+                  url: ${HS_JELLYFIN_URL}
+                  icon: ${HS_JELLYFIN_ICON}
+                - title: ${HS_QBITTORRENT_NAME}
+                  url: ${HS_QBITTORRENT_URL}
+                  icon: ${HS_QBITTORRENT_ICON}
+                - title: ${HS_GLANCE_NAME}
+                  url: ${HS_GLANCE_URL}
+                  icon: ${HS_GLANCE_ICON}
+                - title: ${HS_FILEBROWSER_NAME}
+                  url: ${HS_FILEBROWSER_URL}
+                  icon: ${HS_FILEBROWSER_ICON}
+                - title: ${HS_NPM_NAME}
+                  url: ${HS_NPM_URL}
+                  check-url: ${HS_NPM_CHECKURL}
+                  icon: ${HS_NPM_ICON}
+                - title: ${HS_UPTIMEKUMA_NAME}
+                  url: ${HS_UPTIMEKUMA_URL}
+                  icon: ${HS_UPTIMEKUMA_ICON}
+                - title: ${HS_DOZZLE_NAME}
+                  url: ${HS_DOZZLE_URL}
+                  icon: ${HS_DOZZLE_ICON}
+                - title: ${HS_BESZEL_NAME}
+                  url: ${HS_BESZEL_URL}
+                  icon: ${HS_BESZEL_ICON}
+                - title: ${HS_FRIGATE_NAME}
+                  url: ${HS_FRIGATE_URL}
+                  icon: ${HS_FRIGATE_ICON}
+            - type: docker-containers
+              containers:
+                ${HS_GLANCE_CONTAINER}:
+                  name: ${HS_GLANCE_NAME}
+                  description: ${HS_GLANCE_DESC}
+                  url: ${HS_GLANCE_URL}
+                  icon: ${HS_GLANCE_ICON}
+                  hide: false
+                ${HS_NPM_CONTAINER}:
+                  name: ${HS_NPM_NAME}
+                  description: ${HS_NPM_DESC}
+                  url: ${HS_NPM_URL}
+                  icon: ${HS_NPM_ICON}
+                  hide: false
+                ${HS_UPTIMEKUMA_CONTAINER}:
+                  name: ${HS_UPTIMEKUMA_NAME}
+                  description: ${HS_UPTIMEKUMA_DESC}
+                  url: ${HS_UPTIMEKUMA_URL}
+                  icon: ${HS_UPTIMEKUMA_ICON}
+                  hide: false  
+                ${HS_JELLYFIN_CONTAINER}:
+                  name: ${HS_JELLYFIN_NAME}
+                  description: ${HS_JELLYFIN_DESC}
+                  url: ${HS_JELLYFIN_URL}
+                  icon: ${HS_JELLYFIN_ICON}
+                  hide: false
+                ${HS_FILEBROWSER_CONTAINER}:
+                  name: ${HS_FILEBROWSER_NAME}
+                  description: ${HS_FILEBROWSER_DESC}
+                  url: ${HS_FILEBROWSER_URL}
+                  icon: ${HS_FILEBROWSER_ICON}
+                  hide: false
+                ${HS_DOZZLE_CONTAINER}:
+                  name: ${HS_DOZZLE_NAME}
+                  description: ${HS_DOZZLE_DESC}
+                  url: ${HS_DOZZLE_URL}
+                  icon: ${HS_DOZZLE_ICON}
+                  hide: false
+                ${HS_WATCHTOWER_CONTAINER}:
+                  name: ${HS_WATCHTOWER_NAME}
+                  description: ${HS_WATCHTOWER_DESC}
+                  url: ${HS_WATCHTOWER_URL}
+                  icon: ${HS_WATCHTOWER_ICON}
+                  hide: false
+                ${HS_BESZEL_CONTAINER}:
+                  name: ${HS_BESZEL_NAME}
+                  description: ${HS_BESZEL_DESC}
+                  url: ${HS_BESZEL_URL}
+                  icon: ${HS_BESZEL_ICON}
+                  hide: false
+                beszel-agent:
+                  name: Beszel Agent
+                  description: Beszel Agent
+                  hide: false
+                ${HS_FRIGATE_CONTAINER}:
+                  name: ${HS_FRIGATE_NAME}
+                  description: ${HS_FRIGATE_DESC}
+                  url: ${HS_FRIGATE_URL}
+                  icon: ${HS_FRIGATE_ICON}
+                  hide: false
