@@ -64,6 +64,6 @@ movefiles() {
         read
     ' _ "$@"
 
-    echo "Transfer started! You can safely close Cockpit or your browser."
+    echo "Transfer started! You can safely this terminal session."
     echo "Run 'movefiles --status' to check status, or 'screen -r $SESSION_NAME' to attach."
 }
